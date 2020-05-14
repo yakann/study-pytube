@@ -1,4 +1,5 @@
 from pytube import YouTube
+import download
 
 def mainee(res, only_audio, progressive, path):
     yt = YouTube(path)
@@ -34,4 +35,4 @@ if __name__ == "__main__":
         only_audio=True
         progressive = False
         res = ''
-    mainee(res, only_audio, progressive, yt)
+    download.download(res, only_audio, progressive, yt).main_function()
