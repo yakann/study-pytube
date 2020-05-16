@@ -1,17 +1,10 @@
 from pytube import YouTube
 import download
 
-def mainee(res, only_audio, progressive, path):
-    yt = YouTube(path)
-    for i in yt.streams.filter(res=res, file_extension='mp4', only_audio=only_audio, progressive=progressive):
-        print(i)
 
-    ##stream = yt.streams.filter(only_audio=True , file_extension='mp4').first()
-    ##stream.download('C:/Users/mahmu/OneDrive/Masaüstü')
-    print('bittii')
 # İndirileceği yeri seçme
 # Görüntü kalitelerini gösterme
-# Ana işlemin yapıldığı yeri farklı bir classa çekme
+# Ana işlemin yapıldığı yeri farklı bir classa çekme ++
 if __name__ == "__main__":
     yt = input('İşlem yapmak istediğiniz linki buraya yapıştırın: ')
     res = '720p'
@@ -35,4 +28,6 @@ if __name__ == "__main__":
         only_audio=True
         progressive = False
         res = ''
-    download.download(res, only_audio, progressive, yt).main_function()
+    work_object = download
+    work_object.download(res, only_audio, progressive, yt).show()
+    work_object.download(res, only_audio, progressive, yt).main_function()
